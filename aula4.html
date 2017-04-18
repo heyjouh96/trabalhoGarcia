@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function operacao(){
+                var p1 = document.getElementById("p1").innerHTML;
+                var p2 = document.getElementById("p2").innerHTML;
+                var s1 = document.getElementById("s1");
+                var d1 = document.getElementById("res");
+                var oper = s1[s1.selectedIndex].value;
+                var expr = p1 + oper + p2;
+                d1.innerHTML = eval(expr);
+            }
+            
+        </script>
+    </head>
+    <body>
+        <p id="p1">1</p>
+        <p id="p2">2</p>
+        <select id="s1">
+            <option value="+">Somar</option>
+            <option value="-">Subtrair</option>
+            <option value="*">Mult</option>
+            <option value="/">Div</option>
+        </select>
+        <div id="res" onclick="operacao()"> Clique me</div>
+
+    </body>
+</html>

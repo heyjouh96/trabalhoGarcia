@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--<script src="aula6.js"></script>-->
+        <script type="text/javascript">
+        
+            function ex2(obj){
+                /* 
+                COMO É UM ARRAY QUE ESTÁ SENDO PASSADO, USEI O "FOR" PARA PERCORRER-LO.
+                ESSE FOR VAI RODAR 2X, QUE É O NUMERO DE LINHAS QUE TEM NO ARRAY PASSADO LÁ EMBAIXO.
+                
+                */
+                for(var i in obj){
+                    var tab2 = document.getElementById("t2");
+                    var tbody = document.querySelector("tbody");
+                    var tr = document.createElement("tr");
+                    var tdnome = document.createElement("td");
+                    var tdpreco = document.createElement("td");
+                    var tdqtd = document.createElement("td");
+                    tdnome.innerHTML = obj[i].nome; 
+                    tdpreco.innerHTML = obj[i].preco;
+                    tdqtd.innerHTML = obj[i].qtd;
+                    tr.appendChild(tdnome);
+                    tr.appendChild(tdpreco);
+                    tr.appendChild(tdqtd);
+                    tbody.appendChild(tr);
+                    tab2.appendChild(tbody);
+                }
+                
+            }
+            
+        </script>
+    </head>
+    <body>
+        <button onclick="criar()"> Criar </button>
+        <button onclick="criarListaOrdenada()"> CriarLista </button>
+        <form name="form1">
+            Aluno: <input type="text" name="aluno">
+        </form>
+        <button id="b3" onclick="inserirAluno()">Inserir</button>
+        
+        <ul id="ul1">
+            
+        </ul>
+        
+        <hr>
+        
+        <form name="ex1">
+            <p>Disciplina: <input type="text" name="disciplina"></p>
+            <p>Sigla: <input type="text" name="sigla"></p>
+        </form>
+        <button id="btnex1" onclick="inserirDisciplina()">Inserir</button>
+        <br><br>
+        
+        <!--<table id="tab1" border="1">
+            <tr>
+                <td>Disciplina</td>
+                <td>Sigla</td>
+            </tr>
+            
+        </table>-->
+        
+        
+        
+        
+        
+        <hr>
+        
+        <p>PARA PENSAR</p>
+        
+        <form name="pp">
+            <p>Disciplina: <input type="text" name="disciplina"></p>
+            <p>Sigla: <input type="text" name="sigla"></p>
+        </form>
+        <button id="btnpp" onclick="inserirParaPensar()">Inserir</button>
+        <br><br>
+        
+        
+        <hr>
+        
+        <p>Exercicio 2</p>
+        
+        
+        <table id="t2">
+            <thead>
+                <tr> 
+                    <th> NOME PRODUTO </th> 
+                    <th> PREÇO </th>
+                    <th> QUANTIDADE </th>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        
+        <script>
+            // PASSANDO OS VALORES EM ARRAY PARA A FUNCTION LÁ EM CIMA
+            ex2([{nome:"Caneta", preco:5.5, qtd:8},
+                 {nome:"Tesoura", preco:8.27, qtd:3}
+                ]);
+        </script>
+        
+        
+    </body>
+    
+</html>

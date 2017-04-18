@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function testeVec(){
+                /*mesmo que o 'for' normal
+                var v = [2,3,"wakawaka",true,3.5];
+                
+                for(var i in v){
+                    alert(v[i]);
+                }*/
+                
+                //OBJETO: EH UM CONTEINER DE DADOS
+                //COM INDICES NAO NECESSARIAMENTE INTEIROS
+                //(objetos não são percorridos em ordem ordenada)
+                /*var objVazio = {};
+                var objNaoVazio = {5.5: 3, "NOME": 7.5, 9: "OLA"}
+                
+                for(var i in objNaoVazio){
+                    alert(i + " -> " + objNaoVazio[i]);
+                }*/
+                
+                // JSON - javascript object notation
+                // EX 1.
+                /*var aluno = {"nome":"Jonathan", "idade":21, "RA":"201526800", "curso":"SI"};
+                alert(aluno.nome);
+                alert(aluno.idade);
+                alert(aluno.RA);
+                alert(aluno.curso);*/
+                
+                // EX 2.
+                var alunos = [{"nome":"Jonathan", "idade":21, "RA":"201526800", "curso":"SI"},
+                              {"nome":"Alexandre", "idade":27, "RA":"201554564", "curso":"SI"},
+                              {"nome":"Lucas", "idade":18, "RA":"2015268787", "curso":"SI"},
+                              {"nome":"Andressa", "idade":20, "RA":"20157578", "curso":"SI"},
+                              {"nome":"Gustavo", "idade":17, "RA":"20154477", "curso":"SI"}]
+                var MediaIdade = 0;
+                for(var i in alunos){
+                    MediaIdade = MediaIdade + alunos[i].idade;
+                }
+                alert(MediaIdade/alunos.length);
+            }
+            
+            //EXERCICIO 1: considere a seguinte lista de objetos e mostre quem ficou de P3
+            function exercicio1(){
+                var notas = [{"nome":"Vitor", "P1":2, "P2":7},
+                             {"nome":"Alexandre", "P1":10, "P2":10},
+                             {"nome":"Bárbara", "P1":4, "P2":4},
+                             {"nome":"Lucas", "P1":9, "P2":9},
+                             {"nome":"Ana Júlia", "P1":7.5, "P2":5.5},
+                             {"nome":"Andressa", "P1":6.5, "P2":8}];
+                
+                for(var i in notas){
+                    var MediaNota = 0;
+                    MediaNota = (notas[i].P1 + notas[i].P2)/2;
+                    if(MediaNota >= 6){
+                        alert(notas[i].nome + " MEDIA: " + MediaNota + " Passou!");
+                    }
+                    else{
+                        alert(notas[i].nome + " MEDIA: " + MediaNota + " P3");
+                    }
+                }
+            }
+            
+            /*EXERCICIO 2: Considere a seguir a lista de objetos:
+            E faça uma função para o que se pede:
+
+            a) Mostre na tela todos os innerHTML;
+            b) Mostre na tela as cores de span e p;
+            c) Mostre todos os valores das divs;
+            d) Exibe a quantidade de p's;
+            e) Troque todas as cores para #EEEEEE;
+            f) Troque todos os innerHTML para "Trocado". */
+
+            function exercicio2a(tag){
+                 for(var i in tag){
+                     alert(tag[i].innerHTML);
+                 }
+            }
+            
+            function exercicio2b(tag){
+                 for(var i in tag){
+                     if(tag[i].tagName == "p" || tag[i].tagName == "span"){
+                        alert(tag[i].color);
+                     }
+                 }
+            }
+            
+            function exercicio2c(tag){
+                 for(var i in tag){
+                     if(tag[i].tagName == "div"){
+                        alert(tag[i].color + " " + tag[i].innerHTML);
+                     }
+                 }
+            }
+            
+            function exercicio2d(tag){
+                var cont = 0;
+                 for(var i in tag){
+                     if(tag[i].tagName == "p"){
+                        cont = cont + 1;
+                     }
+                 }
+                 alert(cont);
+            }
+            
+            function exercicio2e(tag){
+                 for(var i in tag){
+                     tag[i].color = "#EEEEEE";
+                 }
+                 
+                 for(var i in tag){
+                     alert(tag[i].color);
+                 }
+            }
+            
+            function exercicio2f(tag){
+                 for(var i in tag){
+                     tag[i].innerHTML = "trocado";
+                 }
+                 
+                 for(var i in tag){
+                     alert(tag[i].innerHTML);
+                 }
+            }
+        </script>
+    </head>
+    
+    <body>
+        <script>
+            exercicio2a([{"tagName":"p", "color":"#FF00AC", "innerHTML":"OLA MUNDO"},
+                         {"tagName":"div", "color":"#000000", "innerHTML":"Div1"},
+                         {"tagName":"div", "color":"#FFFFFF", "innerHTML":"Outra Div"},
+                         {"tagName":"p", "color":"#C87502", "innerHTML":"Outro p"},
+                         {"tagName":"span", "color":"#B9ED47", "innerHTML":"Um span"}
+                        ]);
+        </script>
+    </body>
+</html>

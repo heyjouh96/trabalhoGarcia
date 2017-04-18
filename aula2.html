@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <script>
+        
+            /* 1- Faça uma função que peça para o usuario digitar dois numeros e informe o IMC
+            OBS: Altura e peso são floats*/
+            
+            function ex1(){
+                var peso = prompt("Digite seu peso:");
+                var altura = prompt("Digie sua altura:");
+                peso = parseFloat(peso);
+                altura = parseFloat(altura);
+                
+                alert("IMC: "+peso/(altura*altura));
+            }
+            
+            /* 2- Faça uma função que peça para o usuario nome e idade. A função
+            deverá mostrar mensagem de erro caso o nome seja vazio ou a idade seja
+            menor que 18 e, uma mensagem de sucesso caso contrario */
+            
+            function ex2(){
+                var nome = prompt("Nome:");
+                var idade = prompt("Idade:");
+                
+                if((nome == "") || (idade < 18)){
+                    alert("Erro!");
+                }
+                else{
+                    alert("Sucesso!");
+                }
+            }
+        
+            function entrada(){
+                var nome = prompt("Digite um nome: ");
+                if(nome == ""){
+                    alert("Erro");
+                }
+                else{
+                    alert("Olá, "+nome);
+                }
+            }
+            
+            function parImpar(){
+                var num = prompt("Digite um numero: ");
+                if(num % 2 == 0){
+                    alert("par");
+                }
+                else{
+                    alert("impar");
+                }
+            }
+            
+            function somar(){
+                var x = prompt("Digite 1º valor: ");
+                var y = prompt("Digite 2º valor: ");
+                x = parseInt(x);
+                y = parseInt(y);
+                alert(x+y);
+            }
+            
+            function bar(){
+                x = 4;
+                return x;
+            }
+            
+            //HOISTING: ato de declarar uma variavel depois de usá-la.
+            
+            function foo(){
+                alert(bar());
+            }
+            
+        </script>
+    </head>
+    
+    <body>
+        <script> foo(); </script>
+    </body>
+</html>

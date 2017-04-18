@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            
+            /* EXERCICIO: Faça uma função que receba dois vetores como parâmetro.
+            Se os tamanhos forem diferentes, mostre erro. Se forem iguais crie 
+            um novo vetor que contenha a soma dos elementos de cada vetor
+            primeiro com primeiro, segundo com segundo, etc... */
+            
+            function vetores(a, b){
+                if(a.length != b.length){
+                    alert("erro");
+                }
+                else{
+                    var c = [];
+                    for(var i = 0; i < a.length; i++){
+                        c.push(a[i]+b[i]);
+                    }
+                    alert(c);
+                }
+            }
+            
+            
+        
+            //FUNÇÃO RECEBE UM VETOR CHAMADO "V"
+            
+            function percorrer(v){
+                for(var i=0; i<v.length; i++){
+                    alert(v[i]);
+                }    
+            }
+            
+            function popular(){
+                var aux = [];
+                for(var i = 0; i < 10; i++){
+                    aux.push(prompt("Digite um elemento"));
+                }
+                alert(aux);
+                console.log(aux);
+            }
+            
+            
+            
+        </script>
+        
+    </head>
+    
+    <body>
+        <form>
+            <input type="text" name="mask"/>
+            <input type="submit" value="Submit"/>
+        </form>
+        <!--<script> vetores([1, 2, 3], [2, 3, 1]); </script>-->
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.com/libraries/jquery.mask"></script>
+    <script>
+        $("input[name=nome]").mask("000.000.000-00");
+    </script>
+</html>
